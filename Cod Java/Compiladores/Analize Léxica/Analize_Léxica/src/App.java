@@ -1,6 +1,6 @@
 import java.io.IOException;
+import Controle.Uni;
 
-import Sintatico.Sintático;
 
 //Autor: Wallatan França P Souza
 //Disciplina: Compiladores
@@ -8,14 +8,10 @@ import Sintatico.Sintático;
 
 public class App {
     public static void main(String[] args) throws InterruptedException, IOException{
-        //lexica.Analize_Lexica();
-        Sintático sintatico = new Sintático();
-        sintatico.ini();
+        Uni.start();
     }
     
-    public static void menu(){
 
-    }
         
 }
 

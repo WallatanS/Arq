@@ -85,7 +85,7 @@ public class Lista {
         lista.add("id");
         lista.add("<");
         lista.add("num");
-        lista.add(";;");
+        lista.add(";");
         lista.add("id");
         lista.add("+");
         lista.add(")");
