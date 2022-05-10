@@ -7,8 +7,9 @@ import java.util.Scanner;
 
 public class App {
     public static void main(String[] args) throws InterruptedException, IOException {
-        Analize_Lexica();
-    
+        //Analize_Lexica();
+        Sintático sintatico = new Sintático();
+        sintatico.ini();
     }
 
     public static void Analize_Lexica() throws InterruptedException, IOException{
@@ -24,6 +25,10 @@ public class App {
         operandos.verifica(cod, pont, tam, buff);
         char Character = cod.charAt(pont);
         operandos.chamada(cod, pont, tam, Character, buff);
+    }
+
+    public static void menu(){
+
     }
         
 }

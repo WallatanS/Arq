@@ -5,7 +5,11 @@ public class Pilha {
     
     public Pilha(){
         this.posPilha = -1;//inicia pilha com pos = -1, indicando que esta vazia
-        this.Pilha = new String[100];//Cria a pilha com 200 espaços
+        this.Pilha = new String[50];//Cria a pilha com 200 espaços
+    }
+
+    public String topo(){
+        return this.Pilha[(this.posPilha)];
     }
     
     public boolean pilhaVazia(){
@@ -33,12 +37,13 @@ public class Pilha {
         if(pilhaVazia()){
             return null;//checa se vazia, se sim, encerra o metodo
         }
+        System.out.println(this.topo());
         this.posPilha--;
         return this.Pilha[(this.posPilha+1)];
     }
     
     public void iniciar(){
         this.empilhar("$");
-        this.empilhar("<cod>");
+        this.empilhar("<COD>");
     }
 }

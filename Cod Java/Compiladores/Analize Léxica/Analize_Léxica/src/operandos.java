@@ -104,64 +104,76 @@ public class operandos{
     }
 
     static int Characterespecial(String cod, int pont, String buff, int start) {
-        char Character = cod.charAt(pont);
+        char character = cod.charAt(pont);
         pont++; 
-        if (Character == '('){
-            print_operando(Character, start);
+        if (character == '('){
+            String asString = Character.toString(character);
+            print_operando(asString, start);
             return pont;
         }
         
-        if (Character == ')'){
-            print_operando(Character, start);
+        if (character == ')'){
+            String asString = Character.toString(character);
+            print_operando(asString, start);
             return pont;
         }
 
-        if (Character == '<'){
-            print_operando(Character, start);
+        if (character == '<'){
+            String asString = Character.toString(character);
+            print_operando(asString, start);
             return pont;
         }
 
-        if (Character == '>'){
-            print_operando(Character, start);
+        if (character == '>'){
+            String asString = Character.toString(character);
+            print_operando(asString, start);
             return pont;
         }
 
-        if (Character == '='){
-            print_operando(Character, start);
+        if (character == '='){
+            String asString = Character.toString(character);
+            print_operando(asString, start);
             return pont;
         }
-        if (Character == '-'){
-            print_operando(Character, start);
-            return pont;
-        }
-
-        if (Character == '+'){
-            print_operando(Character, start);
+        if (character == '-'){
+            String asString = Character.toString(character);
+            print_operando(asString, start);
             return pont;
         }
 
-        if (Character == '/'){
-            print_operando(Character, start);
+        if (character == '+'){
+            String asString = Character.toString(character);
+            print_operando(asString, start);
             return pont;
         }
 
-        if (Character == '*'){
-            print_operando(Character, start);
+        if (character == '/'){
+            String asString = Character.toString(character);
+            print_operando(asString, start);
             return pont;
         }
 
-        if (Character == '{'){
-            print_operando(Character, start);
+        if (character == '*'){
+            String asString = Character.toString(character);
+            print_operando(asString, start);
             return pont;
         }
 
-        if (Character == '}'){
-            print_operando(Character, start);
+        if (character == '{'){
+            String asString = Character.toString(character);
+            print_operando(asString, start);
             return pont;
         }
 
-        if (Character == ';'){
-            print_operando(Character, start);
+        if (character == '}'){
+            String asString = Character.toString(character);
+            print_operando(asString, start);
+            return pont;
+        }
+
+        if (character == ';'){
+            String asString = Character.toString(character);
+            print_operando(asString, start);
             return pont;
         } else{
             return pont;
@@ -182,6 +194,8 @@ public class operandos{
                 if (Character != ' ' && pont <= cont){
                     if (Character == '<' || Character == '>' || Character == '(' || Character == ')' || Character == '-' || Character == '+' || Character == '/' || Character == '*' || Character == '{' || Character == '}' || Character == ';'){
                         System.out.println("| id | "+(start)+" | "+buff);
+                        String texto = "id";
+                        Lista.add(texto);
                         return Characterespecial(cod, pont, buff, start);        
                     }else{
                         pont++;
@@ -200,13 +214,17 @@ public class operandos{
                 if (Character != ' ' && pont <= cont){
                     if (Character == '<' || Character == '>' || Character == '(' || Character == ')' || Character == '-' || Character == '+' || Character == '/' || Character == '*' || Character == '{' || Character == '}' || Character == ';' || Character == '='){
                         System.out.println("| id | "+(start)+" | "+buff);
+                        String texto = "id";
+                        Lista.add(texto);
                         return Characterespecial(cod, pont, buff, start);        
                     }else{
                         pont++;
                     }  
                 }
             }
-            System.out.println("| id | "+(start)+" | "+buff); 
+            System.out.println("| id | "+(start)+" | "+buff);
+            String texto = "id";
+            Lista.add(texto); 
             return Characterespecial(cod, pont, buff, start);
         }
 
@@ -214,8 +232,9 @@ public class operandos{
         return pont;
     }
 
-    static void print_operando (char Character, int pont){
+    static void print_operando (String Character, int pont){
         System.out.println("| "+ Character+" | "+ (pont));
+        Lista.add(Character);
     }
 
     static void print (String cod, int pont, int start, int cont){
