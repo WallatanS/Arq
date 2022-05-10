@@ -1,3 +1,4 @@
+package Sintatico;
 public class Pilha {
     
     public String[] Pilha;

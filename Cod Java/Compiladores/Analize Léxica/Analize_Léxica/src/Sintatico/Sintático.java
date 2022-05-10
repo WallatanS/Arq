@@ -1,3 +1,4 @@
+package Sintatico;
 public class Sintático {
     public void ini(){
         Pilha pilha = new Pilha();
@@ -5,7 +6,7 @@ public class Sintático {
 
         Lista lista = new Lista();
         lista.iniciar();
-        //lista.modelo1();
+        lista.modelo1();
         //lista.modelo2();
         //lista.modelo3();
         //lista.modelo4();

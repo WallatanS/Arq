@@ -1,3 +1,4 @@
+package Leitor;
 import java.io.BufferedReader;
 import java.io.BufferedWriter;
 import java.io.FileReader;
@@ -8,7 +9,7 @@ import java.util.Scanner;
 public class Leitor {
 
 	public static void ini(String args[]) throws IOException {
-		String path = "/tmp/file.txt";
+		String path = "/tmp/art.txt";
 		ManipuladorArquivo.escritor(path);
 		ManipuladorArquivo.leitor(path);
 	}

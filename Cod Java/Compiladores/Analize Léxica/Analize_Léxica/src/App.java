@@ -1,12 +1,14 @@
 import java.io.IOException;
 
+import Sintatico.Sintático;
+
 //Autor: Wallatan França P Souza
 //Disciplina: Compiladores
 //Tema: Análize léxica
 
 public class App {
     public static void main(String[] args) throws InterruptedException, IOException{
-        lexica.Analize_Lexica();
+        //lexica.Analize_Lexica();
         Sintático sintatico = new Sintático();
         sintatico.ini();
     }

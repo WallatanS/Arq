@@ -1,4 +1,7 @@
+package Léxico;
 import java.io.IOException;
+
+import Sintatico.Lista;
 
 public class operandos{
 

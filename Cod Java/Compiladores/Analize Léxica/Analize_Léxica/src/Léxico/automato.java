@@ -1,3 +1,4 @@
+package Léxico;
 public class automato {
     static int q1(String cod, int pont, String buff, int start) { //int e if
         pont++;
