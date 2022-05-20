@@ -9,9 +9,6 @@ import Controle.Uni;
 public class App {
     public static void main(String[] args) throws InterruptedException, IOException{
         Uni.start();
-    }
-    
-
-        
+    }   
 }
 

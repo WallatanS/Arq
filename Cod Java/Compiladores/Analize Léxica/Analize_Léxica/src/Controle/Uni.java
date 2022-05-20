@@ -13,8 +13,8 @@ public class Uni{
 
     public static void menu(int cond) throws InterruptedException, IOException{
         System.out.println("------------");
-        System.out.println("Opção:");
-        System.out.println("Léxico: 1");
+        System.out.println("Opção:      ");
+        System.out.println("Léxico:    1");
         System.out.println("Sintático: 2");
         System.out.println("------------");
         Scanner imput = new Scanner(System.in);

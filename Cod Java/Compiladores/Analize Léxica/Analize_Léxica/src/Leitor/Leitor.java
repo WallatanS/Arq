@@ -7,11 +7,16 @@ import java.io.IOException;
 import java.util.Scanner;
 
 public class Leitor {
+	static String ende;
 
 	public static void ini(String args[]) throws IOException {
-		String path = "/tmp/art.txt";
-		ManipuladorArquivo.escritor(path);
-		ManipuladorArquivo.leitor(path);
+		ManipuladorArquivo.escritor(ende);
+		ManipuladorArquivo.leitor(ende);
+	}
+
+	public static void caminho (String caminho){
+		ende = caminho;
+
 	}
 
 	public static void leitor(String path) throws IOException {
@@ -20,7 +25,6 @@ public class Leitor {
 		while (true) {
 			if (linha != null) {
 				System.out.println(linha);
-
 			} else
 				break;
 			linha = buffRead.readLine();
@@ -36,7 +40,6 @@ public class Leitor {
 			while (true) {
 				if (linha != null) {
 					System.out.println(linha);
-
 				} else
 					break;
 				linha = buffRead.readLine();
