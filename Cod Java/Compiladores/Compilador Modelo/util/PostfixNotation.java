@@ -1,8 +1,4 @@
-package me.mariana.ketlyn.util;
-
 import java.util.*;
-
-import static me.mariana.ketlyn.util.LineSeparator.splitBy;
 
 public class PostfixNotation {
     private static int precedence(String c) {
