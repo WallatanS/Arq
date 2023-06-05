@@ -1,13 +1,3 @@
-package me.mariana.ketlyn;
-
-import me.mariana.ketlyn.analyzers.assembly.AssemblyMaker;
-import me.mariana.ketlyn.analyzers.intermediary.Intermediary;
-import me.mariana.ketlyn.analyzers.lexical.LexicalAnalyzer;
-import me.mariana.ketlyn.analyzers.semantic.SemanticAnalyzer;
-import me.mariana.ketlyn.analyzers.syntactic.SyntacticAnalyzer;
-import me.mariana.ketlyn.util.ArgumentParser;
-import me.mariana.ketlyn.util.FileManager;
-
 public class Ketlyn {
     public static void main(String[] args) {
         var argumentParser = new ArgumentParser(args);
