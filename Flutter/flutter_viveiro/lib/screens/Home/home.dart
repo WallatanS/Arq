@@ -17,7 +17,10 @@ class HomeScreen extends StatelessWidget {
         ),
         body: ListView(
           children: [
-            SearchBarBody(),
+            SizedBox(
+                width: 400,
+                child: SearchBarBody(),
+            ),
             const SizedBox(height: 8),
             list_components(context),
             const SizedBox(height: 8),
