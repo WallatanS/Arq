@@ -1,35 +1,26 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_viveiro/screens/Home/componentes/constructor.dart';
 
-import '../../commons/componentes_search/search_body.dart';
-import 'list_components.dart';
-
-
-class HomeScreen extends StatelessWidget {
+class HomeScreen extends StatefulWidget {
   const HomeScreen({Key? key}) : super(key: key);
 
   @override
+  State<HomeScreen> createState() => _HomeScreenState();
+}
+
+class _HomeScreenState extends State<HomeScreen> {
+
+  @override
   Widget build(BuildContext context) {
-    return Padding(
-      padding: const EdgeInsets.all(8.0),
-      child: Scaffold(
-        appBar: AppBar(
-          title: const Text('HOME'),
-        ),
-        body: ListView(
-          children: [
-            SizedBox(
-                width: 400,
-                child: SearchBarBody(),
-            ),
-            const SizedBox(height: 8),
-            list_components(context),
-            const SizedBox(height: 8),
-            list_components(context),
-          ],
-        ),
-      ),
-    );
+    return const ConstrutorHome();
   }
 }
+
+
+
+
+
+
+
 
 

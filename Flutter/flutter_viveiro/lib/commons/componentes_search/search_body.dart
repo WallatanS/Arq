@@ -24,19 +24,22 @@ class _SearchBarBodyState extends State<SearchBarBody> {
 
   @override
   Widget build(BuildContext context) {
-    return TextField(
-      controller: _searchController,
-      decoration: InputDecoration(
-        prefixIcon: const Icon(Icons.search),
-        hintText: 'Pesquisar',
-        border: OutlineInputBorder(
-          borderRadius: BorderRadius.circular(100.0),
+    return Padding(
+      padding: const EdgeInsets.only(bottom: 16),
+      child: TextField(
+        controller: _searchController,
+        decoration: InputDecoration(
+          prefixIcon: const Icon(Icons.search),
+          hintText: 'Pesquisar',
+          border: OutlineInputBorder(
+            borderRadius: BorderRadius.circular(100.0),
+          ),
         ),
+        onSubmitted: (value) {
+          // Ação ao pressionar "Enter" ou "Concluir" no teclado
+          performSearch(value);
+        },
       ),
-      onSubmitted: (value) {
-        // Ação ao pressionar "Enter" ou "Concluir" no teclado
-        performSearch(value);
-      },
     );
   }
 

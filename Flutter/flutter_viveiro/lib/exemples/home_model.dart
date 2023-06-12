@@ -1,13 +1,13 @@
 import 'package:flutter/material.dart';
 
-class home extends StatefulWidget {
-  home({Key? key}) : super(key: key);
+class Home extends StatefulWidget {
+  const Home({Key? key}) : super(key: key);
 
   @override
-  State<home> createState() => _homeState();
+  State<Home> createState() => _HomeState();
 }
 
-class _homeState extends State<home> {
+class _HomeState extends State<Home> {
   bool opacidade = true;
 
   @override
@@ -19,10 +19,10 @@ class _homeState extends State<home> {
       ),
       body: AnimatedOpacity(
         opacity: opacidade ? 1 : 0,
-        duration: Duration(milliseconds: 1000),
+        duration: const Duration(milliseconds: 1000),
         child: ListView(
           //scrollDirection: Axis.horizontal,
-          children: [
+          children: const [
             Task('Arvore 1', Colors.teal,
                 'https://static.escolakids.uol.com.br/2019/09/arvore.jpg', 5),
             Task(
@@ -78,7 +78,7 @@ class _homeState extends State<home> {
             },
           );
         },
-        child: Icon(Icons.remove_red_eye),
+        child: const Icon(Icons.remove_red_eye),
       ),
     );
   }
@@ -104,134 +104,132 @@ class _TaskState extends State<Task> {
   Widget build(BuildContext context) {
     return Padding(
       padding: const EdgeInsets.all(8.0),
-      child: Container(
-        child: Stack(
-          children: [
-            Container(
-              decoration: BoxDecoration(
-                border: Border.all(color: Colors.indigo, width: 1),
-                borderRadius: BorderRadius.circular(20),
-                color: Colors.blue,
-              ),
-              height: 140,
+      child: Stack(
+        children: [
+          Container(
+            decoration: BoxDecoration(
+              border: Border.all(color: Colors.indigo, width: 1),
+              borderRadius: BorderRadius.circular(20),
+              color: Colors.blue,
             ),
-            Column(
-              children: [
-                Container(
-                  decoration: BoxDecoration(
-                    //border: Border.all(color: Colors.indigo, width: 1),
-                    borderRadius: BorderRadius.circular(20),
-                    color: Colors.white,
-                  ),
-                  height: 100,
-                  child: Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                    children: [
-                      Container(
-                        width: 72,
-                        height: 100,
-                        //color: widget.cor1,
-                        child: ClipRRect(
-                            borderRadius: BorderRadius.circular(10),
-                            child:
-                                Image.network(widget.foto, fit: BoxFit.cover)),
-                      ),
-                      Column(
-                        mainAxisAlignment: MainAxisAlignment.center,
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        children: [
-                          Container(
-                            width: 200,
-                            child: Text(
-                              widget.nome,
-                              style: TextStyle(
-                                  fontSize: 24,
-                                  overflow: TextOverflow.ellipsis),
-                            ),
-                          ),
-                          Row(
-                            children: [
-                              Icon(Icons.star,
-                                  size: 15,
-                                  color: (widget.dificuldade >= 1)
-                                      ? Colors.blue
-                                      : Colors.blue[100]),
-                              Icon(Icons.star,
-                                  size: 15,
-                                  color: (widget.dificuldade >= 2)
-                                      ? Colors.blue
-                                      : Colors.blue[100]),
-                              Icon(Icons.star,
-                                  size: 15,
-                                  color: (widget.dificuldade >= 3)
-                                      ? Colors.blue
-                                      : Colors.blue[100]),
-                              Icon(Icons.star,
-                                  size: 15,
-                                  color: (widget.dificuldade >= 4)
-                                      ? Colors.blue
-                                      : Colors.blue[100]),
-                              Icon(Icons.star,
-                                  size: 15,
-                                  color: (widget.dificuldade >= 5)
-                                      ? Colors.blue
-                                      : Colors.blue[100]),
-                            ],
-                          ),
-                        ],
-                      ),
-                      Container(
-                        height: 52,
-                        //width: 52,
-                        child: ElevatedButton(
-                            onPressed: () {
-                              setState(() {
-                                nivel++;
-                              });
-                            },
-                            child: Column(
-                              // mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                              // crossAxisAlignment: CrossAxisAlignment.end,
-                              children: [
-                                Icon(Icons.arrow_drop_up_rounded),
-                                Text(
-                                  'UP',
-                                  style: TextStyle(fontSize: 12),
-                                )
-                              ],
-                            )),
-                      )
-                    ],
-                  ),
+            height: 140,
+          ),
+          Column(
+            children: [
+              Container(
+                decoration: BoxDecoration(
+                  //border: Border.all(color: Colors.indigo, width: 1),
+                  borderRadius: BorderRadius.circular(20),
+                  color: Colors.white,
                 ),
-                Row(
+                height: 100,
+                child: Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
-                    Padding(
-                      padding: const EdgeInsets.all(8),
-                      child: Container(
-                        width: 200,
-                        child: LinearProgressIndicator(
-                          color: Colors.teal,
-                          value: (widget.dificuldade > 0)
-                              ? (nivel / widget.dificuldade) / 10
-                              : 1,
+                    SizedBox(
+                      width: 72,
+                      height: 100,
+                      //color: widget.cor1,
+                      child: ClipRRect(
+                          borderRadius: BorderRadius.circular(10),
+                          child:
+                              Image.network(widget.foto, fit: BoxFit.cover),),
+                    ),
+                    Column(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        SizedBox(
+                          width: 200,
+                          child: Text(
+                            widget.nome,
+                            style: const TextStyle(
+                                fontSize: 24,
+                                overflow: TextOverflow.ellipsis),
+                          ),
                         ),
-                      ),
+                        Row(
+                          children: [
+                            Icon(Icons.star,
+                                size: 15,
+                                color: (widget.dificuldade >= 1)
+                                    ? Colors.blue
+                                    : Colors.blue[100]),
+                            Icon(Icons.star,
+                                size: 15,
+                                color: (widget.dificuldade >= 2)
+                                    ? Colors.blue
+                                    : Colors.blue[100]),
+                            Icon(Icons.star,
+                                size: 15,
+                                color: (widget.dificuldade >= 3)
+                                    ? Colors.blue
+                                    : Colors.blue[100]),
+                            Icon(Icons.star,
+                                size: 15,
+                                color: (widget.dificuldade >= 4)
+                                    ? Colors.blue
+                                    : Colors.blue[100]),
+                            Icon(Icons.star,
+                                size: 15,
+                                color: (widget.dificuldade >= 5)
+                                    ? Colors.blue
+                                    : Colors.blue[100]),
+                          ],
+                        ),
+                      ],
                     ),
-                    Padding(
-                      padding: const EdgeInsets.all(8),
-                      child: Text(
-                        'Nível: $nivel',
-                        style: TextStyle(color: Colors.white, fontSize: 16),
-                      ),
-                    ),
+                    SizedBox(
+                      height: 52,
+                      //width: 52,
+                      child: ElevatedButton(
+                          onPressed: () {
+                            setState(() {
+                              nivel++;
+                            });
+                          },
+                          child: const Column(
+                            // mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                            // crossAxisAlignment: CrossAxisAlignment.end,
+                            children: [
+                              Icon(Icons.arrow_drop_up_rounded),
+                              Text(
+                                'UP',
+                                style: TextStyle(fontSize: 12),
+                              )
+                            ],
+                          )),
+                    )
                   ],
-                )
-              ],
-            ),
-          ],
-        ),
+                ),
+              ),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  Padding(
+                    padding: const EdgeInsets.all(8),
+                    child: SizedBox(
+                      width: 200,
+                      child: LinearProgressIndicator(
+                        color: Colors.teal,
+                        value: (widget.dificuldade > 0)
+                            ? (nivel / widget.dificuldade) / 10
+                            : 1,
+                      ),
+                    ),
+                  ),
+                  Padding(
+                    padding: const EdgeInsets.all(8),
+                    child: Text(
+                      'Nível: $nivel',
+                      style: const TextStyle(color: Colors.white, fontSize: 16),
+                    ),
+                  ),
+                ],
+              )
+            ],
+          ),
+        ],
       ),
     );
   }

@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
-import '../../commons/componentes_search/search_body.dart';
 
-Widget list_components (BuildContext context){
+Widget listComponents (BuildContext context){
   return Column(
     children: [
       Container(
