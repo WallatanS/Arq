@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_viveiro/screens/login/login.dart';
 
-
 void main() {
   runApp(const MyApp());
 }
@@ -17,7 +16,7 @@ class MyApp extends StatelessWidget {
           colorScheme: ColorScheme.fromSeed(seedColor: Colors.grey),
           useMaterial3: true,
         ),
-        home: LoginScreen()
+        home: const LoginScreen()
     );
   }
 }

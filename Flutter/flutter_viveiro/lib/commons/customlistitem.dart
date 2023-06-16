@@ -1,10 +1,13 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_viveiro/screens/acervo/acervoscreen.dart';
+
 
 class CustomListItem extends StatelessWidget {
   final String title;
   final String subtitle;
   final String imageUrl;
   final Color backgroundColor;
+  final int opcao;
 
   const CustomListItem({
     super.key,
@@ -12,6 +15,7 @@ class CustomListItem extends StatelessWidget {
     required this.subtitle,
     required this.imageUrl,
     required this.backgroundColor,
+    required this.opcao,
   });
 
   @override
@@ -46,6 +50,12 @@ class CustomListItem extends StatelessWidget {
                 // fontWeight: FontWeight.bold,
                 color: Colors.white),
           ),
+          onTap: () {
+            Navigator.push(
+              context,
+              MaterialPageRoute(builder: (context) => AcervoScreeen(opcao)),
+            );// Navegar para a tela de destino
+          },
         ),
       ),
     );

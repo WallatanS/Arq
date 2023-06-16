@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
-import '../../../commons/modelimage.dart';
-import '../../../commons/modeltextfield.dart';
-import 'botonlogin.dart';
-import 'switchvalidation.dart';
+import '../../commons/modelimage.dart';
+import '../../commons/modeltextfield.dart';
+import '../../commons/botonlogin.dart';
+import '../../commons/switchvalidation.dart';
 
 class ComponentsLogin extends StatelessWidget {
   const ComponentsLogin({Key? key}) : super(key: key);
@@ -13,10 +13,10 @@ class ComponentsLogin extends StatelessWidget {
       mainAxisAlignment: MainAxisAlignment.center,
       children: [
         modelImage(context, 'assets/images/logo.jpg'),
-        textFormItem(context, 'E-mail', false),
+        textFormItem(context, 'E-mail','E-mail',false),
         textFormItemsenha(context, 'Senha', true),
         const SwitchValidation(false),
-        botonLogin(context),
+        botonLogin(context, 'Entrar'),
       ],
     );
   }

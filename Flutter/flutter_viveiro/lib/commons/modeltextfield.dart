@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-Widget textFormItem(BuildContext context, String name, bool obscure) {
+Widget textFormItem(BuildContext context, String name, String dado, bool obscure) {
   return Padding(
     padding: const EdgeInsets.only(bottom: 8),
     child: SizedBox(
@@ -11,7 +11,7 @@ Widget textFormItem(BuildContext context, String name, bool obscure) {
         obscureText: obscure,
         decoration: InputDecoration(
           hintText: name,
-          labelText: name,
+          labelText: dado,
           labelStyle: const TextStyle(
             fontSize: 16,
             color: Color.fromRGBO(114, 121, 111, 1),
