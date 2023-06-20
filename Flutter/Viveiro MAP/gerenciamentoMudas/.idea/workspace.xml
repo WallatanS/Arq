@@ -1,0 +1,170 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="85dbda37-5279-46f5-a32d-dd57cf7cba7a" name="Changes" comment="" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Interface" />
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
+  </component>
+  <component name="MavenImportPreferences">
+    <option name="generalSettings">
+      <MavenGeneralSettings>
+        <option name="mavenHome" value="Use Maven wrapper" />
+        <option name="useMavenConfig" value="true" />
+      </MavenGeneralSettings>
+    </option>
+  </component>
+  <component name="ProjectCodeStyleSettingsMigration">
+    <option name="version" value="2" />
+  </component>
+  <component name="ProjectId" id="2M1SFfarUzmbV7e93hk5a9tASBq" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RequestMappingsPanelOrder0&quot;: &quot;0&quot;,
+    &quot;RequestMappingsPanelOrder1&quot;: &quot;1&quot;,
+    &quot;RequestMappingsPanelWidth0&quot;: &quot;75&quot;,
+    &quot;RequestMappingsPanelWidth1&quot;: &quot;75&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;dart.analysis.tool.window.visible&quot;: &quot;false&quot;,
+    &quot;last_opened_file_path&quot;: &quot;/Users/wallatanfranca/Arquivos/gerenciamentoMudas&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;SDKs&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.28850573&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;advanced.settings&quot;,
+    &quot;show.migrate.to.gradle.popup&quot;: &quot;false&quot;,
+    &quot;spring.configuration.checksum&quot;: &quot;94bfd918396a34c72c5d9f5703d59bdc&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  }
+}</component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\IgorZagonel\Documents\Github\gerenciamentoMudas" />
+    </key>
+  </component>
+  <component name="RunManager" selected="Spring Boot.GerenciamentoMudasApplication">
+    <configuration name="GerenciamentoMudasApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
+      <module name="gerenciamentoMudas" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.sistemasEmbarcados.gerenciamentoMudas.GerenciamentoMudasApplication" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="docker: Compose Deployment" type="docker-deploy" factoryName="docker-compose.yml" temporary="true" server-name="Docker">
+      <deployment type="docker-compose.yml">
+        <settings>
+          <option name="sourceFilePath" value="docker/docker-compose.yml" />
+        </settings>
+      </deployment>
+      <method v="2" />
+    </configuration>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="85dbda37-5279-46f5-a32d-dd57cf7cba7a" name="Changes" comment="" />
+      <created>1676933495269</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1676933495269</updated>
+      <workItem from="1676933496835" duration="1386000" />
+      <workItem from="1677017103980" duration="2320000" />
+      <workItem from="1677020714957" duration="1757000" />
+      <workItem from="1677023576139" duration="2888000" />
+      <workItem from="1677096529105" duration="2427000" />
+      <workItem from="1677155780210" duration="1853000" />
+      <workItem from="1677259829753" duration="12000" />
+      <workItem from="1677442702834" duration="299000" />
+      <workItem from="1677506156834" duration="3972000" />
+      <workItem from="1677525446714" duration="855000" />
+      <workItem from="1677528239534" duration="3814000" />
+      <workItem from="1678368963051" duration="2249000" />
+      <workItem from="1682188884898" duration="34000" />
+      <workItem from="1682189347510" duration="9000" />
+      <workItem from="1682194684046" duration="14000" />
+      <workItem from="1682194715951" duration="4000" />
+      <workItem from="1682194730856" duration="91000" />
+      <workItem from="1682294829189" duration="1692000" />
+      <workItem from="1682602463567" duration="1275000" />
+      <workItem from="1684093651669" duration="6848000" />
+      <workItem from="1684144999739" duration="995000" />
+      <workItem from="1684175408420" duration="9767000" />
+      <workItem from="1684186671743" duration="5514000" />
+      <workItem from="1684360694840" duration="2069000" />
+      <workItem from="1684955111509" duration="301000" />
+      <workItem from="1685564308757" duration="8360000" />
+      <workItem from="1685711935617" duration="4386000" />
+      <workItem from="1685921151047" duration="968000" />
+      <workItem from="1685979701821" duration="2744000" />
+      <workItem from="1686265071502" duration="4926000" />
+      <workItem from="1686490309327" duration="1169000" />
+      <workItem from="1686523342051" duration="2073000" />
+      <workItem from="1686657860481" duration="1698000" />
+      <workItem from="1686769664263" duration="86000" />
+      <workItem from="1686770271513" duration="316000" />
+      <workItem from="1686770615668" duration="204000" />
+      <workItem from="1686770985399" duration="291000" />
+      <workItem from="1686778552083" duration="7630000" />
+      <workItem from="1686838693169" duration="159000" />
+      <workItem from="1686838869090" duration="3361000" />
+      <workItem from="1687127354089" duration="1070000" />
+      <workItem from="1687128809445" duration="1937000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="XDebuggerManager">
+    <watches-manager>
+      <configuration name="SpringBootApplicationConfigurationType">
+        <watch expression="arvoreMatriz.formacaoCopa" />
+        <watch expression="arvoreMatriz" />
+      </configuration>
+    </watches-manager>
+  </component>
+  <component name="XSLT-Support.FileAssociations.UIState">
+    <expand />
+    <select />
+  </component>
+</project>
