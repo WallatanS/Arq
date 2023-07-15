@@ -70,7 +70,7 @@ class _EditAcervoArvoreState extends State<EditAcervoArvore> {
     super.initState();
     _id = widget.id;
     print('id $_id');
-    bancoUrl = 'http://10.77.53.102:8080/arvoreMatriz/find/$_id';
+    bancoUrl = 'http://192.168.1.179:8080/arvoreMatriz/find/$_id';
   }
 
   Future<ArqUrl> fetchData() async {

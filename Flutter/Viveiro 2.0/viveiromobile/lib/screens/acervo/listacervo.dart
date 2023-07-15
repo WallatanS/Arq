@@ -7,12 +7,12 @@ class ArqUrl {
   final int id;
   final String nomeComum;
   final String nomeCientifico;
-  final double alturaArvore;
-  final double alturaFuste;
+  final dynamic alturaArvore;
+  final dynamic alturaFuste;
   //final String cap; //erro
   final String formacaoCopa;
   final String formacaoTronco;
-  final double densidadeOcorrencia;
+  final dynamic densidadeOcorrencia;
   final String uf;
   final String cidade;
   final String tipoSolo;
@@ -20,8 +20,8 @@ class ArqUrl {
   final String enderecoColeta;
   final String nomeDeterminador;
   //final double latitude; //erro
-  final double longitude;
-  final double altitude;
+  final dynamic longitude;
+  final dynamic altitude;
   final String especiesAssociadas;
   final int quantidadeSementes;
   final String observacoes;
@@ -70,7 +70,7 @@ class _AcervoArvoreState extends State<AcervoArvore> {
     super.initState();
     _id = widget.id;
     print('id $_id');
-    bancoUrl = 'http://10.77.53.102:8080/arvoreMatriz/find/$_id';
+    bancoUrl = 'http://192.168.1.179:8080/arvoreMatriz/find/$_id';
   }
 
   Future<ArqUrl> fetchData() async {

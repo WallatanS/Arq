@@ -58,11 +58,12 @@ class arqUrl {
 }
 
 class ArvoreMatrixURL extends StatelessWidget {
-  final String bancoUrl = 'http://10.77.53.102:8080/arvoreMatriz/find/all';
+  final String bancoUrl = 'http://192.168.1.179:8080/arvoreMatriz/find/all';
   final http.Client client = http.Client();
 
   Future<List<arqUrl>> fetchData() async {
-    final response = await client.get(Uri.parse(bancoUrl)).timeout(Duration(seconds: 30));
+    final response =
+        await client.get(Uri.parse(bancoUrl)).timeout(Duration(seconds: 30));
     if (response.statusCode == 200) {
       final List<dynamic> data = json.decode(response.body);
       return data.map((item) {
