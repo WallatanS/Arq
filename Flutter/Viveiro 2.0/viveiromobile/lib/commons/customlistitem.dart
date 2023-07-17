@@ -2,7 +2,7 @@ import 'dart:convert';
 import 'dart:typed_data';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
-import 'package:viveiromobile/screens/acervo/acervoscreen.dart';
+import 'package:viveiromobile/screens/acervo/find_id_screen.dart';
 
 class JsonToPngConverter extends StatelessWidget {
   final String jsonImage;
@@ -43,41 +43,38 @@ class CustListItem extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Padding(
-      padding: const EdgeInsets.only(bottom: 8),
-      child: Container(
-        decoration: BoxDecoration(
-          color: backgroundColor,
-          borderRadius: BorderRadius.circular(28),
-        ),
-        child: ListTile(
-          leading: SizedBox(
-            width: 50,
-            height: 50,
-            child: ClipRRect(
+    return Container(
+      decoration: BoxDecoration(
+        color: backgroundColor,
+        borderRadius: BorderRadius.circular(28),
+      ),
+      child: ListTile(
+        leading: SizedBox(
+          width: 50,
+          height: 50,
+          child: ClipRRect(
               borderRadius: BorderRadius.circular(24),
               child:
-                //JsonToPngConverter(jsonImage: 'data:image/png;base6$imageJSON'),),
-                Image.asset('assets/images/arvore.jpg')),
-          ),
-          title: Text(
-            title,
-            style: const TextStyle(
-                fontWeight: FontWeight.bold, color: Colors.white),
-          ),
-          subtitle: Text(
-            subtitle,
-            style: const TextStyle(
-              // fontWeight: FontWeight.bold,
-                color: Colors.white),
-          ),
-          onTap: () {
-            Navigator.push(
-              context,
-              MaterialPageRoute(builder: (context) => AcervoScreeen(opcao, id)),
-            );
-          },
+                  //JsonToPngConverter(jsonImage: 'data:image/png;base6$imageJSON'),),
+                  Image.asset('assets/images/arvore.jpg')),
         ),
+        title: Text(
+          title,
+          style:
+              const TextStyle(fontWeight: FontWeight.bold, color: Colors.white),
+        ),
+        subtitle: Text(
+          subtitle,
+          style: const TextStyle(
+              // fontWeight: FontWeight.bold,
+              color: Colors.white),
+        ),
+        onTap: () {
+          Navigator.push(
+            context,
+            MaterialPageRoute(builder: (context) => AcervoScreeen(opcao, id)),
+          );
+        },
       ),
     );
   }

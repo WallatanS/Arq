@@ -10,4 +10,10 @@ abstract class UserRepository {
 
   @GET('/arvoreMatriz/find/all')
   Future<List<UserModel>> findAll();
+
+  @GET('/arvoreMatriz/find/{id}')
+  Future<UserModel> findById(@Path('id') String id);
+
+  @POST('/arvoreMatriz/save')
+  Future<void> save(@Body() UserModel user);
 }

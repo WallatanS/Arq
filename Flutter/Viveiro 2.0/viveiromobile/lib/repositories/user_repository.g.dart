@@ -25,7 +25,7 @@ class _UserRepository implements UserRepository {
     const _extra = <String, dynamic>{};
     final queryParameters = <String, dynamic>{};
     final _headers = <String, dynamic>{};
-    final Map<String, dynamic>? _data = null;
+    const Map<String, dynamic>? _data = null;
     final _result =
         await _dio.fetch<List<dynamic>>(_setStreamType<List<UserModel>>(Options(
       method: 'GET',
@@ -46,6 +46,33 @@ class _UserRepository implements UserRepository {
     var value = _result.data!
         .map((dynamic i) => UserModel.fromJson(i as Map<String, dynamic>))
         .toList();
+    return value;
+  }
+
+  @override
+  Future<UserModel> findById(String id) async {
+    const _extra = <String, dynamic>{};
+    final queryParameters = <String, dynamic>{};
+    final _headers = <String, dynamic>{};
+    final Map<String, dynamic>? _data = null;
+    final _result = await _dio
+        .fetch<Map<String, dynamic>>(_setStreamType<UserModel>(Options(
+      method: 'GET',
+      headers: _headers,
+      extra: _extra,
+    )
+            .compose(
+              _dio.options,
+              '/arvoreMatriz/find/{id}',
+              queryParameters: queryParameters,
+              data: _data,
+            )
+            .copyWith(
+                baseUrl: _combineBaseUrls(
+              _dio.options.baseUrl,
+              baseUrl,
+            ))));
+    final value = UserModel.fromJson(_result.data!);
     return value;
   }
 
@@ -78,4 +105,7 @@ class _UserRepository implements UserRepository {
 
     return Uri.parse(dioBaseUrl).resolveUri(url).toString();
   }
+
+  @override
+  dynamic noSuchMethod(Invocation invocation) => super.noSuchMethod(invocation);
 }

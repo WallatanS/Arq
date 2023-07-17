@@ -1,4 +1,3 @@
-
 import 'package:flutter/material.dart';
 import 'package:viveiromobile/commons/scanfoldcompoentestelas/floatingactionbuttonwidget.dart';
 import 'listacervo.dart';
@@ -14,7 +13,6 @@ class AcervoScreeen extends StatefulWidget {
 }
 
 class _AcervoScreeenState extends State<AcervoScreeen> {
-
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -51,11 +49,10 @@ class _AcervoScreeenState extends State<AcervoScreeen> {
             //AcervoMuda(id),
           ],
         ),
-        floatingActionButton: floatingactionbuttonWidgetedit(widget.opcao,widget.id),
+        floatingActionButton:
+            floatingactionbuttonWidgetedit(widget.opcao, widget.id),
         //bottomNavigationBar: BottonNavigatorBar(opcaoSelecionada),
       ),
     );
   }
 }
-
-

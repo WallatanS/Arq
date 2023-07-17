@@ -58,7 +58,7 @@ class arqUrl {
 }
 
 class ArvoreMatrixURL extends StatelessWidget {
-  final String bancoUrl = 'http://192.168.1.179:8080/arvoreMatriz/find/all';
+  final String bancoUrl = 'http://192.168.0.5:8080/arvoreMatriz/find/all';
   final http.Client client = http.Client();
 
   Future<List<arqUrl>> fetchData() async {

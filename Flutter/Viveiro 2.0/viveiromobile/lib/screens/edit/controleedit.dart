@@ -165,7 +165,8 @@ class _EditAcervoArvoreState extends State<EditAcervoArvore> {
           alturaFuste: double.parse(data['alturaFuste'].toString()),
           formacaoCopa: data['formacaoCopa'],
           formacaoTronco: data['formacaoTronco'],
-          densidadeOcorrencia: double.parse(data['densidadeOcorrencia'].toString()),
+          densidadeOcorrencia:
+              double.parse(data['densidadeOcorrencia'].toString()),
           uf: data['uf'],
           cidade: data['cidade'],
           tipoSolo: data['tipoSolo'],
@@ -185,7 +186,8 @@ class _EditAcervoArvoreState extends State<EditAcervoArvore> {
         _alturaFusteController.text = _data.alturaFuste.toString();
         _formacaoCopaController.text = _data.formacaoCopa;
         _formacaoTroncoController.text = _data.formacaoTronco;
-        _densidadeOcorrenciaController.text = _data.densidadeOcorrencia.toString();
+        _densidadeOcorrenciaController.text =
+            _data.densidadeOcorrencia.toString();
         _ufController.text = _data.uf;
         _cidadeController.text = _data.cidade;
         _tipoSoloController.text = _data.tipoSolo;
@@ -194,10 +196,10 @@ class _EditAcervoArvoreState extends State<EditAcervoArvore> {
         _longitudeController.text = _data.longitude.toString();
         _altitudeController.text = _data.altitude.toString();
         _especiesAssciadasController.text = _data.especiesAssociadas;
-        _quantidadeSementesController.text = _data.quantidadeSementes.toString();
+        _quantidadeSementesController.text =
+            _data.quantidadeSementes.toString();
         _observacoesController.text = _data.observacoes;
         _imagemMatrizController.text = _data.imagemMatriz;
-
 
         // Atualize os valores dos outros controladores
       });
@@ -251,7 +253,8 @@ class _EditAcervoArvoreState extends State<EditAcervoArvore> {
                   'assets/images/arvore.jpg',
                   fit: BoxFit.cover,
                 ),
-              ),),
+              ),
+            ),
             const SizedBox(height: 16),
             TextFieldSample(
               nome: 'Nome Comum',
@@ -465,4 +468,3 @@ class TextFieldSample extends StatelessWidget {
     );
   }
 }
-
