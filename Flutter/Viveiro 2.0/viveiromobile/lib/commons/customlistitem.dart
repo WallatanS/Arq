@@ -2,7 +2,7 @@ import 'dart:convert';
 import 'dart:typed_data';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
-import 'package:viveiromobile/screens/acervo/find_id_screen.dart';
+import 'package:viveiromobile/screens/acervo/find_screen.dart';
 
 class JsonToPngConverter extends StatelessWidget {
   final String jsonImage;

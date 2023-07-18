@@ -1,25 +1,33 @@
 import 'package:flutter/material.dart';
-import 'package:viveiromobile/commons/scanfoldcompoentestelas/floatingactionbuttonwidget.dart';
-import 'listacervo.dart';
+import 'package:viveiromobile/screens/edit/listedit_restapi.dart';
 
-class AcervoScreeen extends StatefulWidget {
-  final int opcao;
+class EditScreen extends StatefulWidget {
   final int id;
+  final int opcao;
 
-  const AcervoScreeen(this.opcao, this.id, {Key? key}) : super(key: key);
+  const EditScreen(this.opcao, this.id, {super.key});
 
   @override
-  State<AcervoScreeen> createState() => _AcervoScreeenState();
+  State<EditScreen> createState() => _EditScreenState();
 }
 
-class _AcervoScreeenState extends State<AcervoScreeen> {
+class _EditScreenState extends State<EditScreen> {
+  int opcaoSelecionada = 0;
+  int _id = 0;
+
+  void initState() {
+    super.initState();
+    _id = widget.id;
+    print(_id);
+    opcaoSelecionada = widget.opcao;
+  }
+
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
       home: Scaffold(
-        backgroundColor: const Color.fromRGBO(252, 253, 246, 1),
         appBar: AppBar(
-          title: const Text('Acervo'),
+          title: const Text('Editar'),
           centerTitle: true,
           backgroundColor: const Color.fromRGBO(40, 108, 42, 1),
           leading: IconButton(
@@ -42,16 +50,11 @@ class _AcervoScreeenState extends State<AcervoScreeen> {
           ],
         ),
         body: IndexedStack(
-          index: 0,
+          index: opcaoSelecionada,
           children: <Widget>[
-            AcervoArvore(widget.id),
-            //AcervoSemente(id),
-            //AcervoMuda(id),
+            AcervoArvoreedit(_id),
           ],
         ),
-        floatingActionButton:
-            floatingactionbuttonWidgetedit(widget.opcao, widget.id),
-        //bottomNavigationBar: BottonNavigatorBar(opcaoSelecionada),
       ),
     );
   }

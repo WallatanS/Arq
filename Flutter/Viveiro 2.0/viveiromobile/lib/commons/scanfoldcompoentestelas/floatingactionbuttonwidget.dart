@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:viveiromobile/screens/cadastro/cadastroscreen.dart';
-import 'package:viveiromobile/screens/edit/editscreen.dart';
+import 'package:viveiromobile/screens/cadastro/cadastro_screen.dart';
+import 'package:viveiromobile/screens/edit/edit_screen.dart';
 
 class floatingactionbuttonWidget extends StatefulWidget {
   final int opcao;

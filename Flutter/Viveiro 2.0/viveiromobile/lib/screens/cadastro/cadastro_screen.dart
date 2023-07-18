@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import 'listcadastro_restapi.dart';
+import 'cadastrolist_restapi.dart';
 
 class CadastroScreeen extends StatefulWidget {
   final int opcao;

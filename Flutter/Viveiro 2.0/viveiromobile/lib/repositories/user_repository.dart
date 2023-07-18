@@ -16,4 +16,7 @@ abstract class UserRepository {
 
   @POST('/arvoreMatriz/save')
   Future<void> save(@Body() UserModel user);
+
+  @POST('/arvoreMatriz/update')
+  Future<void> update(@Body() UserModel user);
 }
