@@ -4,52 +4,53 @@ part 'user_model.g.dart';
 
 @JsonSerializable()
 class UserModel {
-  final int id;
-  final String nomeComum;
-  final String nomeCientifico;
-  final double alturaArvore;
-  final double alturaFuste;
-  final double cap;
-  final String formacaoCopa;
-  final String formacaoTronco;
-  final int densidadeOcorrencia;
-  final String uf;
-  final String cidade;
-  final String tipoSolo;
-  final String tipoVegetacao;
-  final String enderecoColeta;
-  final String nomeDeterminador;
-  final String latitude;
-  final String longitude;
-  final String altitude;
-  final String especiesAssociadas;
-  final int quantidadeSementes;
-  final String observacoes;
-  final String imagemMatriz;
+  int? id;
+  String nomeComum;
+  String nomeCientifico;
+  dynamic alturaArvore;
+  dynamic alturaFuste;
+  dynamic cap;
+  String formacaoCopa;
+  String formacaoTronco;
+  dynamic densidadeOcorrencia;
+  String uf;
+  String cidade;
+  String tipoSolo;
+  String tipoVegetacao;
+  String enderecoColeta;
+  String nomeDeterminador;
+  String latitude;
+  String longitude;
+  String altitude;
+  String especiesAssociadas;
+  dynamic quantidadeSementes;
+  String observacoes;
+  String imagemMatriz;
 
-  UserModel(
-      this.id,
-      this.nomeComum,
-      this.nomeCientifico,
-      this.alturaArvore,
-      this.alturaFuste,
-      this.cap,
-      this.formacaoCopa,
-      this.formacaoTronco,
-      this.densidadeOcorrencia,
-      this.uf,
-      this.cidade,
-      this.tipoSolo,
-      this.tipoVegetacao,
-      this.enderecoColeta,
-      this.nomeDeterminador,
-      this.latitude,
-      this.longitude,
-      this.altitude,
-      this.especiesAssociadas,
-      this.quantidadeSementes,
-      this.observacoes,
-      this.imagemMatriz);
+  UserModel({
+    this.id,
+    required this.nomeComum,
+    required this.nomeCientifico,
+    required this.alturaArvore,
+    required this.alturaFuste,
+    required this.cap,
+    required this.formacaoCopa,
+    required this.formacaoTronco,
+    required this.densidadeOcorrencia,
+    required this.uf,
+    required this.cidade,
+    required this.tipoSolo,
+    required this.tipoVegetacao,
+    required this.enderecoColeta,
+    required this.nomeDeterminador,
+    required this.latitude,
+    required this.longitude,
+    required this.altitude,
+    required this.especiesAssociadas,
+    required this.quantidadeSementes,
+    required this.observacoes,
+    required this.imagemMatriz,
+  });
 
   factory UserModel.fromJson(Map<String, dynamic> json) =>
       _$UserModelFromJson(json);

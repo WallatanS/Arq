@@ -13,7 +13,7 @@ class _UserRepository implements UserRepository {
     this._dio, {
     this.baseUrl,
   }) {
-    baseUrl ??= 'http://192.168.1.179:8080';
+    baseUrl ??= 'http://192.168.56.1:8080';
   }
 
   final Dio _dio;
@@ -25,7 +25,7 @@ class _UserRepository implements UserRepository {
     const _extra = <String, dynamic>{};
     final queryParameters = <String, dynamic>{};
     final _headers = <String, dynamic>{};
-    const Map<String, dynamic>? _data = null;
+    final Map<String, dynamic>? _data = null;
     final _result =
         await _dio.fetch<List<dynamic>>(_setStreamType<List<UserModel>>(Options(
       method: 'GET',
@@ -63,7 +63,7 @@ class _UserRepository implements UserRepository {
     )
             .compose(
               _dio.options,
-              '/arvoreMatriz/find/{id}',
+              '/arvoreMatriz/find/${id}',
               queryParameters: queryParameters,
               data: _data,
             )
@@ -74,6 +74,31 @@ class _UserRepository implements UserRepository {
             ))));
     final value = UserModel.fromJson(_result.data!);
     return value;
+  }
+
+  @override
+  Future<void> save(UserModel user) async {
+    const _extra = <String, dynamic>{};
+    final queryParameters = <String, dynamic>{};
+    final _headers = <String, dynamic>{};
+    final _data = <String, dynamic>{};
+    _data.addAll(user.toJson());
+    await _dio.fetch<void>(_setStreamType<void>(Options(
+      method: 'POST',
+      headers: _headers,
+      extra: _extra,
+    )
+        .compose(
+          _dio.options,
+          '/arvoreMatriz/save',
+          queryParameters: queryParameters,
+          data: _data,
+        )
+        .copyWith(
+            baseUrl: _combineBaseUrls(
+          _dio.options.baseUrl,
+          baseUrl,
+        ))));
   }
 
   RequestOptions _setStreamType<T>(RequestOptions requestOptions) {
@@ -105,7 +130,4 @@ class _UserRepository implements UserRepository {
 
     return Uri.parse(dioBaseUrl).resolveUri(url).toString();
   }
-
-  @override
-  dynamic noSuchMethod(Invocation invocation) => super.noSuchMethod(invocation);
 }

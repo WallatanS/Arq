@@ -1,80 +1,125 @@
 import 'package:dio/dio.dart';
 import 'package:flutter/material.dart';
 import 'package:viveiromobile/commons/textfild.dart';
+import 'package:viveiromobile/models/user_model.dart';
 import 'package:viveiromobile/repositories/user_repository.dart';
+import 'package:viveiromobile/screens/home/homescreen.dart';
 
-import '../../commons/botonlogin.dart';
-
-class AcervoArvore extends StatelessWidget {
+class AcervoArvore extends StatefulWidget {
   const AcervoArvore({super.key});
 
   @override
+  State<AcervoArvore> createState() => _AcervoArvoreState();
+}
+
+class _AcervoArvoreState extends State<AcervoArvore> {
+  final _repository = UserRepository(Dio());
+  final nomeComumEditingController = TextEditingController();
+  final nomeCientificoEditingController = TextEditingController();
+  final alturaArvoreEditingController = TextEditingController();
+  final alturaFusteEditingController = TextEditingController();
+  final capEditingController = TextEditingController();
+  final formacaoCopaEditingController = TextEditingController();
+  final formacaoTroncoEditingController = TextEditingController();
+  final densidadeOcorrenciaEditingController = TextEditingController();
+  final ufEditingController = TextEditingController();
+  final cidadeEditingController = TextEditingController();
+  final tipoSoloEditingController = TextEditingController();
+  final tipoVegetacaoEditingController = TextEditingController();
+  final enderecoColetaEditingController = TextEditingController();
+  final nomeDeterminadorEditingController = TextEditingController();
+  final latitudeEditingController = TextEditingController();
+  final longitudeEditingController = TextEditingController();
+  final altitudeEditingController = TextEditingController();
+  final especiesAssociadasEditingController = TextEditingController();
+  final quantidadeSementesEditingController = TextEditingController();
+  final observacoesEditingController = TextEditingController();
+  final imagemMatrizEditingController = TextEditingController();
+
+  @override
   Widget build(BuildContext context) {
-    final _repository = UserRepository(Dio());
     return Padding(
       padding: const EdgeInsets.only(top: 16.0, bottom: 8, left: 16, right: 16),
-      child: Column(children: [
+      child: ListView(children: [
         const SizedBox(height: 16),
-        const Text(
-          'Adicionar Foto', // Texto acima do campo TextFormField
-          style: TextStyle(
-            fontSize: 18,
-            //fontWeight: FontWeight.bold,
-            //textAlign: TextAlign.center,
-          ),
-        ),
-        const SizedBox(height: 8),
-        ElevatedButton(
-          onPressed: () async {
-            // FilePickerResult? result = await FilePicker.platform.pickFiles();
-            //
-            // if (result != null) {
-            //   String? filePath = result.files.single.path;
-            //   // Faça o que você precisa com o caminho do arquivo selecionado
-            //   print('Caminho do arquivo: $filePath');
-            // }
-          },
-          style: ElevatedButton.styleFrom(
-            shape: const CircleBorder(),
-            padding: const EdgeInsets.all(32),
-            backgroundColor: const Color.fromRGBO(83, 99, 79, 1),
-          ),
-          child: const Icon(Icons.add),
-        ),
-        const SizedBox(height: 16),
-        //const SearchBarBody(),
-        Expanded(
-          child: ListView(
-            children: const [
-              SizedBox(height: 16),
-              TextFieldCad('ID', '1'),
-              TextFieldCad('Estagio', 'semente'),
-              TextFieldCad('Especie', 'cad'),
-              TextFieldCad('Adubação', ''),
-              TextFieldCad('Altura da planta', ''),
-              TextFieldCad('Altura do fuste', ''),
-              TextFieldCad('Formacao da copa', ''),
-              TextFieldCad('formacao do tronco', ''),
-              TextFieldCad('municipio', ''),
-              TextFieldCad('Endereço', ''),
-              TextFieldCad('Latitude', ''),
-              TextFieldCad('Longitude', ''),
-              TextFieldCad('Altitude', ''),
-              TextFieldCad('tipo de solo', ''),
-              TextFieldCad('tipo de vegetação', ''),
-              TextFieldCad('nome do determinador', ''),
-              TextFieldCad('inst. determinador', ''),
-              TextFieldCad('CAP', ''),
-              TextFieldCad('Densidade de Ocorrencia', ''),
-              TextFieldCad('Area de coleta', ''),
-              TextFieldCad('Outras Especies associadas', ''),
-              TextFieldCad('Observações', ''),
-              SizedBox(height: 40),
+        Form(
+          child: Column(
+            children: [
+              TextFieldCad('Nome Comum', '', nomeComumEditingController),
+              TextFieldCad(
+                  'Nome Científico', '', nomeCientificoEditingController),
+              TextFieldCad('Altura Arvore', '', alturaArvoreEditingController),
+              TextFieldCad('Altura Fuste', '', alturaFusteEditingController),
+              TextFieldCad('CAP', '', capEditingController),
+              TextFieldCad('Formação Copa', '', formacaoCopaEditingController),
+              TextFieldCad(
+                  'Formação Tronco', '', formacaoTroncoEditingController),
+              TextFieldCad('densidadeOcorrencia', '',
+                  densidadeOcorrenciaEditingController),
+              TextFieldCad('uf', '', ufEditingController),
+              TextFieldCad('Cidade', '', cidadeEditingController),
+              TextFieldCad('tipoSolo', '', tipoSoloEditingController),
+              TextFieldCad('tipoVegetacao', '', tipoVegetacaoEditingController),
+              TextFieldCad(
+                  'enderecoColeta', '', enderecoColetaEditingController),
+              TextFieldCad(
+                  'nomeDeterminador', '', nomeDeterminadorEditingController),
+              TextFieldCad('latitude', '', latitudeEditingController),
+              TextFieldCad('longitude', '', longitudeEditingController),
+              TextFieldCad('altitude', '', nomeComumEditingController),
+              TextFieldCad('especiesAssociadas', '',
+                  especiesAssociadasEditingController),
+              TextFieldCad('especiesAssociadas', '',
+                  especiesAssociadasEditingController),
+              TextFieldCad('tipoVegetacao', '', tipoVegetacaoEditingController),
+              TextFieldCad('observacoes', '', observacoesEditingController),
+              TextFieldCad('imagemMatriz', '', imagemMatrizEditingController),
             ],
           ),
         ),
         const SizedBox(height: 16),
-        botonLogin(context, 'Salvar'),
+        ElevatedButton(
+          onPressed: () async {
+            await _repository.save(UserModel(
+              nomeComum: nomeComumEditingController.text,
+              nomeCientifico: nomeCientificoEditingController.text,
+              alturaArvore: alturaArvoreEditingController.text,
+              alturaFuste: nomeComumEditingController.text,
+              cap: capEditingController.text,
+              formacaoCopa: formacaoCopaEditingController.text,
+              formacaoTronco: formacaoTroncoEditingController.text,
+              densidadeOcorrencia: densidadeOcorrenciaEditingController.text,
+              uf: ufEditingController.text,
+              cidade: cidadeEditingController.text,
+              tipoSolo: tipoSoloEditingController.text,
+              tipoVegetacao: tipoVegetacaoEditingController.text,
+              enderecoColeta: enderecoColetaEditingController.text,
+              nomeDeterminador: nomeDeterminadorEditingController.text,
+              latitude: latitudeEditingController.text,
+              longitude: longitudeEditingController.text,
+              altitude: altitudeEditingController.text,
+              especiesAssociadas: especiesAssociadasEditingController.text,
+              quantidadeSementes: quantidadeSementesEditingController.text,
+              observacoes: observacoesEditingController.text,
+              imagemMatriz: imagemMatrizEditingController.text,
+            ));
+            setState(() {});
+            Navigator.push(
+              context,
+              MaterialPageRoute(builder: (context) => const ConstrutorHome()),
+            );
+          },
+          style: ElevatedButton.styleFrom(
+            backgroundColor: Colors.green, // Cor de fundo do botão
+            shape: RoundedRectangleBorder(
+              borderRadius: BorderRadius.circular(24), // Borda arredondada
+            ),
+          ),
+          child: const Text(
+            'Salvar',
+            style: TextStyle(fontSize: 16, color: Colors.white),
+          ),
+        )
       ]),
     );
   }

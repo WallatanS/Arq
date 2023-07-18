@@ -4,7 +4,7 @@ import 'package:viveiromobile/models/user_model.dart';
 
 part 'user_repository.g.dart';
 
-@RestApi(baseUrl: 'http://192.168.1.179:8080')
+@RestApi(baseUrl: 'http://192.168.56.1:8080')
 abstract class UserRepository {
   factory UserRepository(Dio dio, {String baseUrl}) = _UserRepository;
 

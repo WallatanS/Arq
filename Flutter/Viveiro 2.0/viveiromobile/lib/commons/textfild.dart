@@ -28,7 +28,7 @@ class _TextFieldSampleState extends State<TextFieldSample> {
         children: [
           Text(
             '   $name', // Texto acima do campo TextFormField
-              style: const TextStyle(
+            style: const TextStyle(
               fontSize: 18,
               //fontWeight: FontWeight.bold,
               //textAlign: TextAlign.left,
@@ -36,10 +36,10 @@ class _TextFieldSampleState extends State<TextFieldSample> {
           ),
           const SizedBox(height: 4),
           Container(
-              //width: MediaQuery.of(context).size.width * .80,
-              decoration: BoxDecoration(
-                borderRadius: BorderRadius.circular(24),
-                color: const Color.fromRGBO(222, 229, 216, 1),
+            //width: MediaQuery.of(context).size.width * .80,
+            decoration: BoxDecoration(
+              borderRadius: BorderRadius.circular(24),
+              color: const Color.fromRGBO(222, 229, 216, 1),
             ),
             child: TextFormField(
               keyboardType: TextInputType.text,
@@ -55,17 +55,18 @@ class _TextFieldSampleState extends State<TextFieldSample> {
                 ),
                 border: InputBorder.none, // Remover as bordas
               ),
-              ),
             ),
+          ),
         ],
       ),
-      );
+    );
   }
 }
 
 class TextFieldCad extends StatefulWidget {
   final String nome, dado;
-  const TextFieldCad(this.nome, this.dado,{super.key});
+  final TextEditingController controler;
+  const TextFieldCad(this.nome, this.dado, this.controler, {super.key});
 
   @override
   State<TextFieldCad> createState() => _TextFieldCadState();
@@ -73,12 +74,13 @@ class TextFieldCad extends StatefulWidget {
 
 class _TextFieldCadState extends State<TextFieldCad> {
   late String name, dado;
+  late TextEditingController controller_var;
 
   @override
   void initState() {
     super.initState();
     name = widget.nome;
-    dado = widget.dado;
+    controller_var = widget.controler;
   }
 
   @override
@@ -99,28 +101,31 @@ class _TextFieldCadState extends State<TextFieldCad> {
           //const SizedBox(height: 4),
           Container(
             //width: MediaQuery.of(context).size.width * .80,
+            height: 40,
             decoration: BoxDecoration(
               borderRadius: BorderRadius.circular(10),
               color: const Color.fromRGBO(222, 229, 216, 1),
             ),
-            child:
-            TextFormField(
+            child: TextFormField(
+              controller: controller_var,
               keyboardType: TextInputType.text,
               textInputAction: TextInputAction.next,
-              obscureText: true,
+              //obscureText: true,
               decoration: InputDecoration(
                 enabled: true,
-                //hintText: '   $name',
                 labelText: '   $name',
                 labelStyle: const TextStyle(
                   fontSize: 18,
                   color: Colors.black54,
                 ),
                 border: InputBorder.none, // Remover as bordas
-                focusedBorder: InputBorder.none, // Remover as bordas quando o campo está em foco
+                focusedBorder: InputBorder
+                    .none, // Remover as bordas quando o campo está em foco
                 errorBorder: InputBorder.none, // Remover as bordas de erro
-                disabledBorder: InputBorder.none, // Remover as bordas quando o campo está desabilitado
-                enabledBorder: InputBorder.none, // Remover as bordas quando o campo está habilitado
+                disabledBorder: InputBorder
+                    .none, // Remover as bordas quando o campo está desabilitado
+                enabledBorder: InputBorder
+                    .none, // Remover as bordas quando o campo está habilitado
               ),
             ),
           ),

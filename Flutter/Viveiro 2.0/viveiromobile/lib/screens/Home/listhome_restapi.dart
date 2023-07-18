@@ -36,7 +36,7 @@ class _ArvoreMatrixURLState extends State<ArvoreMatrixURL> {
                     title: user.nomeComum,
                     subtitle: user.nomeCientifico,
                     imageJSON: user.imagemMatriz,
-                    id: user.id,
+                    id: user.id ?? 0,
                     backgroundColor: const Color.fromRGBO(186, 204, 179, 100),
                     opcao: 0,
                   ),

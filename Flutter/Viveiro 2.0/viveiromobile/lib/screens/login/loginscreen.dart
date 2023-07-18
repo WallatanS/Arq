@@ -1,8 +1,6 @@
 import 'package:flutter/material.dart';
 import '../../commons/modelimage.dart';
-import '../../commons/modeltextfield.dart';
 import '../../commons/botonlogin.dart';
-import '../../commons/switchvalidation.dart';
 
 class ComponentsLogin extends StatelessWidget {
   const ComponentsLogin({Key? key}) : super(key: key);

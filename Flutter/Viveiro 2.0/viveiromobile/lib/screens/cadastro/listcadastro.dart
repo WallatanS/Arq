@@ -1,6 +1,5 @@
 import 'dart:convert';
 import 'package:flutter/material.dart';
-import 'package:viveiromobile/commons/textfild.dart';
 import 'package:http/http.dart' as http;
 
 class ArqUrl {
@@ -210,7 +209,8 @@ class _AcervoArvoreState extends State<AcervoArvore> {
         //cap: data['cap'], //erro
         formacaoCopa: data['formacaoCopa'],
         formacaoTronco: data['formacaoTronco'],
-        densidadeOcorrencia: double.parse(data['densidadeOcorrencia'].toString()),
+        densidadeOcorrencia:
+            double.parse(data['densidadeOcorrencia'].toString()),
         uf: data['uf'],
         cidade: data['cidade'],
         tipoSolo: data['tipoSolo'],
@@ -248,26 +248,25 @@ class _AcervoArvoreState extends State<AcervoArvore> {
           //   },
           //   controller: _nomeComumController,
           // ),
-        if (_arqUrl != null)
-          // TextFieldSample(
-          //   nome: 'Nome Científico',
-          //   dado: _nomeCientificoController.text,
-          //   status: true,
-          //   onChanged: (value) {
-          //     // Não é necessário fazer nada aqui, pois o valor será atualizado diretamente no controlador
-          //   },
-          //   controller: _nomeCientificoController,
-          // ),
-        // Adicione TextFieldSample para os outros campos do formulário
+          if (_arqUrl != null)
+            // TextFieldSample(
+            //   nome: 'Nome Científico',
+            //   dado: _nomeCientificoController.text,
+            //   status: true,
+            //   onChanged: (value) {
+            //     // Não é necessário fazer nada aqui, pois o valor será atualizado diretamente no controlador
+            //   },
+            //   controller: _nomeCientificoController,
+            // ),
+            // Adicione TextFieldSample para os outros campos do formulário
 
-        ElevatedButton(
-          onPressed: () {
-            updateData();
-          },
-          child: Text('Salvar'),
-        ),
+            ElevatedButton(
+              onPressed: () {
+                updateData();
+              },
+              child: Text('Salvar'),
+            ),
       ],
     );
   }
 }
-
