@@ -1,11 +1,9 @@
-// ignore_for_file: use_build_context_synchronously
-
 import 'package:dio/dio.dart';
 import 'package:flutter/material.dart';
 import 'package:viveiromobile/models/user_model.dart';
 import 'package:viveiromobile/repositories/user_repository.dart';
 import 'package:viveiromobile/screens/home/home_screen.dart';
-
+import 'package:http/http.dart' as http;
 import '../../commons/textfild.dart';
 
 class AcervoArvoreedit extends StatefulWidget {
@@ -60,34 +58,29 @@ class _AcervoArvoreeditState extends State<AcervoArvoreedit> {
             snapshot.hasData) {
           final plantas = snapshot.data;
           //idEditingController.text = plantas?.id;
-          nomeComumEditingController.text = plantas?.nomeComum ?? '';
-          nomeCientificoEditingController.text = plantas?.nomeCientifico ?? '';
-          alturaArvoreEditingController.text =
-              plantas?.alturaArvore?.toString() ?? '';
-          alturaFusteEditingController.text =
-              plantas?.alturaFuste?.toString() ?? '';
-          capEditingController.text = plantas?.cap?.toString() ?? '';
-          formacaoCopaEditingController.text = plantas?.formacaoCopa ?? '';
-          formacaoTroncoEditingController.text = plantas?.formacaoTronco ?? '';
+          nomeComumEditingController.text = plantas!.nomeComum;
+          nomeCientificoEditingController.text = plantas.nomeCientifico;
+          alturaArvoreEditingController.text = plantas.alturaArvore.toString();
+          alturaFusteEditingController.text = plantas.alturaFuste.toString();
+          capEditingController.text = plantas.cap.toString();
+          formacaoCopaEditingController.text = plantas.formacaoCopa;
+          formacaoTroncoEditingController.text = plantas.formacaoTronco;
           densidadeOcorrenciaEditingController.text =
-              plantas?.densidadeOcorrencia?.toString() ?? '';
-          ufEditingController.text = plantas?.uf ?? '';
-          cidadeEditingController.text = plantas?.cidade ?? '';
-          tipoSoloEditingController.text = plantas?.tipoSolo ?? '';
-          tipoVegetacaoEditingController.text = plantas?.tipoVegetacao ?? '';
-          enderecoColetaEditingController.text = plantas?.enderecoColeta ?? '';
-          nomeDeterminadorEditingController.text =
-              plantas?.nomeDeterminador ?? '';
-          latitudeEditingController.text = plantas?.latitude?.toString() ?? '';
-          longitudeEditingController.text =
-              plantas?.longitude?.toString() ?? '';
-          altitudeEditingController.text = plantas?.altitude?.toString() ?? '';
-          especiesAssociadasEditingController.text =
-              plantas?.especiesAssociadas ?? '';
+              plantas.densidadeOcorrencia.toString();
+          ufEditingController.text = plantas.uf;
+          cidadeEditingController.text = plantas.cidade;
+          tipoSoloEditingController.text = plantas.tipoSolo;
+          tipoVegetacaoEditingController.text = plantas.tipoVegetacao;
+          enderecoColetaEditingController.text = plantas.enderecoColeta;
+          nomeDeterminadorEditingController.text = plantas.nomeDeterminador;
+          latitudeEditingController.text = plantas.latitude.toString();
+          longitudeEditingController.text = plantas.longitude.toString();
+          altitudeEditingController.text = plantas.altitude.toString();
+          especiesAssociadasEditingController.text = plantas.especiesAssociadas;
           quantidadeSementesEditingController.text =
-              plantas?.quantidadeSementes?.toString() ?? '';
-          observacoesEditingController.text = plantas?.observacoes ?? '';
-          imagemMatrizEditingController.text = plantas?.imagemMatriz ?? '';
+              plantas.quantidadeSementes.toString();
+          observacoesEditingController.text = plantas.observacoes;
+          imagemMatrizEditingController.text = plantas.imagemMatriz;
           return Padding(
             padding: const EdgeInsets.all(16.0),
             child: ListView(
@@ -118,49 +111,49 @@ class _AcervoArvoreeditState extends State<AcervoArvoreedit> {
                     'Nome Comum',
                     '',
                     TextEditingController(text: plantas!.nomeComum.toString()),
-                    false),
+                    true),
                 TextFildUpdtate('Nome Científico', '',
-                    nomeCientificoEditingController, false),
+                    nomeCientificoEditingController, true),
                 TextFildUpdtate(
-                    'Altura Arvore', '', alturaArvoreEditingController, false),
+                    'Altura Arvore', '', alturaArvoreEditingController, true),
                 TextFildUpdtate(
-                    'Altura Fuste', '', alturaFusteEditingController, false),
-                TextFildUpdtate('CAP', '', capEditingController, false),
+                    'Altura Fuste', '', alturaFusteEditingController, true),
+                TextFildUpdtate('CAP', '', capEditingController, true),
                 TextFildUpdtate(
-                    'Formação Copa', '', formacaoCopaEditingController, false),
+                    'Formação Copa', '', formacaoCopaEditingController, true),
                 TextFildUpdtate('Formação Tronco', '',
-                    formacaoTroncoEditingController, false),
+                    formacaoTroncoEditingController, true),
                 TextFildUpdtate('densidadeOcorrencia', '',
-                    densidadeOcorrenciaEditingController, false),
-                TextFildUpdtate('uf', '', ufEditingController, false),
-                TextFildUpdtate('Cidade', '', cidadeEditingController, false),
+                    densidadeOcorrenciaEditingController, true),
+                TextFildUpdtate('uf', '', ufEditingController, true),
+                TextFildUpdtate('Cidade', '', cidadeEditingController, true),
                 TextFildUpdtate(
-                    'tipoSolo', '', tipoSoloEditingController, false),
+                    'tipoSolo', '', tipoSoloEditingController, true),
                 TextFildUpdtate(
-                    'tipoVegetacao', '', tipoVegetacaoEditingController, false),
+                    'tipoVegetacao', '', tipoVegetacaoEditingController, true),
                 TextFildUpdtate('enderecoColeta', '',
-                    enderecoColetaEditingController, false),
+                    enderecoColetaEditingController, true),
                 TextFildUpdtate('nomeDeterminador', '',
-                    nomeDeterminadorEditingController, false),
+                    nomeDeterminadorEditingController, true),
                 TextFildUpdtate(
-                    'latitude', '', latitudeEditingController, false),
+                    'latitude', '', latitudeEditingController, true),
                 TextFildUpdtate(
-                    'longitude', '', longitudeEditingController, false),
+                    'longitude', '', longitudeEditingController, true),
                 TextFildUpdtate(
-                    'altitude', '', nomeComumEditingController, false),
+                    'altitude', '', nomeComumEditingController, true),
                 TextFildUpdtate('especiesAssociadas', '',
-                    especiesAssociadasEditingController, false),
+                    especiesAssociadasEditingController, true),
                 TextFildUpdtate('especiesAssociadas', '',
-                    especiesAssociadasEditingController, false),
+                    especiesAssociadasEditingController, true),
                 TextFildUpdtate(
-                    'tipoVegetacao', '', tipoVegetacaoEditingController, false),
+                    'tipoVegetacao', '', tipoVegetacaoEditingController, true),
                 TextFildUpdtate(
-                    'observacoes', '', observacoesEditingController, false),
+                    'observacoes', '', observacoesEditingController, true),
                 TextFildUpdtate(
-                    'imagemMatriz', '', imagemMatrizEditingController, false),
+                    'imagemMatriz', '', imagemMatrizEditingController, true),
                 ElevatedButton(
                   onPressed: () async {
-                    await _repository.save(UserModel(
+                    await _repository.update(UserModel(
                       id: widget.id,
                       nomeComum: nomeComumEditingController.text,
                       nomeCientifico: nomeCientificoEditingController.text,
@@ -187,6 +180,7 @@ class _AcervoArvoreeditState extends State<AcervoArvoreedit> {
                       observacoes: observacoesEditingController.text,
                       imagemMatriz: imagemMatrizEditingController.text,
                     ));
+                    updateuser(id: widget.id);
                     setState(() {});
                     Navigator.push(
                       context,
@@ -213,5 +207,17 @@ class _AcervoArvoreeditState extends State<AcervoArvoreedit> {
         return Container();
       },
     );
+  }
+
+  void updateuser({required int id}) async {
+    var url = Uri.parse('http://192.168.56.1:8080/arvoreMatriz/find/$id');
+    var response = await http.put(url);
+    if (response.statusCode == 200) {
+      await ScaffoldMessenger.of(context).showSnackBar(const SnackBar(
+        content: Text('Salvo com sucesso'),
+        backgroundColor: Colors.greenAccent,
+      ));
+      Navigator.pop(context);
+    }
   }
 }
