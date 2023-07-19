@@ -16,10 +16,10 @@ class UserModel {
   String uf;
   String cidade;
   String tipoSolo;
-  String tipoVegetacao;
+  String? tipoVegetacao;
   String enderecoColeta;
   String nomeDeterminador;
-  String latitude;
+  String? latitude;
   String longitude;
   String altitude;
   String especiesAssociadas;

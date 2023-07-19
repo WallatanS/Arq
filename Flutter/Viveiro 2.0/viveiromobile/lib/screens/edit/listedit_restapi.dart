@@ -70,7 +70,8 @@ class _AcervoArvoreeditState extends State<AcervoArvoreedit> {
           ufEditingController.text = plantas.uf;
           cidadeEditingController.text = plantas.cidade;
           tipoSoloEditingController.text = plantas.tipoSolo;
-          tipoVegetacaoEditingController.text = plantas.tipoVegetacao;
+          tipoVegetacaoEditingController.text =
+              plantas.tipoVegetacao.toString();
           enderecoColetaEditingController.text = plantas.enderecoColeta;
           nomeDeterminadorEditingController.text = plantas.nomeDeterminador;
           latitudeEditingController.text = plantas.latitude.toString();

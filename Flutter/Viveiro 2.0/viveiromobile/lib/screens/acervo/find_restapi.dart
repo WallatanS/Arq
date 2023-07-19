@@ -73,7 +73,8 @@ class _AcervoArvoreState extends State<AcervoArvore> {
                 TextFieldSample('UF', plantas.uf),
                 TextFieldSample('Cidade', plantas.cidade),
                 TextFieldSample('Tipo Solo', plantas.tipoSolo),
-                TextFieldSample('Tipo Vegetação', plantas.tipoVegetacao),
+                TextFieldSample(
+                    'Tipo Vegetação', plantas.tipoVegetacao.toString()),
                 TextFieldSample('Endereço Coleta', plantas.enderecoColeta),
                 TextFieldSample('Latitude', plantas.latitude.toString()),
                 TextFieldSample('Longitude', plantas.longitude.toString()),
