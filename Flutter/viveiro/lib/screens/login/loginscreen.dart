@@ -16,7 +16,7 @@ class ComponentsLogin extends StatelessWidget {
         textFormItem(context, 'E-mail','E-mail',false),
         textFormItemsenha(context, 'Senha', true),
         const SwitchValidation(false),
-        botonLogin(context, 'Entrar'),
+        botonLogin(context, 'Login'),
       ],
     );
   }
