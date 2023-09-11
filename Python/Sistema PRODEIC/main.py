@@ -4,9 +4,11 @@ import json  # Importa a biblioteca json
 import requests  # Importa a biblioteca requests para fazer solicitações HTTP
 import ipdb  # Importa a biblioteca ipdb, que é um depurador interativo
 
-# Loop que itera de 1 a 9 (exclusivo)
-for i in range(1, 2):
+print(requests.status_codes)
+lista = []
 
+# Loop que itera de 1 a 9 (exclusivo)
+for i in range(1, 5):
     # Construindo a URL para consulta
     url = f'https://www.sefaz.mt.gov.br/rcr-fe-api/v1/processo/consultacredenciados?page={i}&size=20'
     # Fazendo uma solicitação GET à URL
@@ -15,10 +17,15 @@ for i in range(1, 2):
     if resp.status_code == 200:
         # Lendo o conteúdo da resposta HTTP como um arquivo JSON
         arquivo = resp.json()
+
+        #print(resp)
+        print(arquivo)
+
         # Extraindo o conteúdo da chave 'content' do arquivo JSON
-        print('valor')
         conteudo = arquivo['content']
         # Criando um DataFrame do pandas a partir do conteúdo extraído
         df = pd.DataFrame(conteudo)
+        lista.append(df)
         # Iniciando o depurador interativo ipdb
         #ipdb.set_trace()
+        str(df).rjust(6, '0')
