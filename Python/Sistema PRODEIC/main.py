@@ -6,9 +6,10 @@ import ipdb  # Importa a biblioteca ipdb, que é um depurador interativo
 
 print(requests.status_codes)
 lista = []
+pages_total=1;
 
 # Loop que itera de 1 a 9 (exclusivo)
-for i in range(1, 5):
+for i in range(1, pages_total+1):
     # Construindo a URL para consulta
     url = f'https://www.sefaz.mt.gov.br/rcr-fe-api/v1/processo/consultacredenciados?page={i}&size=20'
     # Fazendo uma solicitação GET à URL
@@ -25,7 +26,8 @@ for i in range(1, 5):
         conteudo = arquivo['content']
         # Criando um DataFrame do pandas a partir do conteúdo extraído
         df = pd.DataFrame(conteudo)
-        lista.append(df)
-        # Iniciando o depurador interativo ipdb
         #ipdb.set_trace()
-        str(df).rjust(6, '0')
+        str(df).rjust(14, '0')
+        lista.append(df)
+    else:
+        break
