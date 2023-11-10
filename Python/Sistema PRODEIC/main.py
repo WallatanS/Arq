@@ -14,7 +14,7 @@ def corrigir_cnpj(cnpj):
 
 
 lista = []
-pages_numbers = 5
+pages_numbers = 12551
 
 # Loop que itera de 1 a 9 (exclusivo)
 for i in range(1, 5):
